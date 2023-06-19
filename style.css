@@ -45,11 +45,12 @@ nav {
     cursor: pointer;
 }
 
-/* nav .logo {
+nav .logo {
     width: 60px;
     border-radius: none;
     height: 60px;
-} */
+} 
+
 
 nav ul {
     display: flex;
