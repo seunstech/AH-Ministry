@@ -72,7 +72,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
- color:rgb(6, 26, 44);   
+ color:rgb(7, 132, 241);   
 }
 
 nav ul li a:after {
@@ -82,7 +82,7 @@ nav ul li a:after {
     position: absolute;
     height: 3px;
     width: 0;
-    background: #016170;
+    background: rgb(7, 132, 241);
     transition: .3s;
 }
 
