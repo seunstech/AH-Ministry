@@ -1,621 +1,772 @@
- *{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;1,500&display=swap');
+
+*{
     margin: 0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-html{
-    font-size:86.5%;
-    overflow-x:hidden ;
-     scroll-behavior: smooth;
-     
+
+.space {
+    padding: 20px 70px;
 }
-#navbar {
+
+a {
     text-decoration: none;
-    text-align: right;
-    justify-content:space-between;
-    margin-right: 70px;
-    word-spacing: 50px;
-    
-} 
-#navbar a{
-    font-size: 2rem;
-    color: rgb(14, 210, 245);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    
-}
-#navbar a:hover{
-    color: red;
 }
 
-/* title design */
-.title-area{
-    height: 400px;
-}
-
-.logo-content img{
-    height: 700px;
-    margin-left: 250px;
-}
- .title-area h1{
-    font-size: 70px;
-    text-align: right;
-    color: rgb(14, 210, 245);
-    margin-right: 170px;
-    font-weight: 800;
-}
-.btn{
-    background: white;
-    font-size: 30px;
-    border-radius: 50px;
-    width: 100%;
-    border: 2.3px solid;
-    padding: 10px 20px;
-    float: right;
-    width: 20%;
-    text-align: center;
-    font-size: 4rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    color: rgb(14, 210, 245);
-    margin-right: 170px;
-    box-shadow:0 0 1rem rgb(189, 30, 30);
-    text-transform: uppercase;
-}
-
-.btn:hover{
-    background: rgb(189, 30, 30);
-    color: white;
-    box-shadow: none;
-} 
-
- .hero{
-    grid-template-columns: 1fr 1fr;
-    height: 400px;
-}  
-
-.church-container{
+nav {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.menu {
+    display: none;
+}
+
+.menu iconify-icon{
+    font-size: 2.2rem;
+    color: rgb(6, 26, 44);
+    cursor: pointer;
+}
+
+nav .logo {
+    width: 60px;
+    border-radius: none;
+    height: 60px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    color:rgb(7, 132, 241);
+    transition: all ease-in-out .3s;
+    position: relative;
+}
+
+nav ul li a:hover {
+ color: #016170;   
+}
+
+nav ul li a:after {
+    content: "";
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background: #016170;
+    transition: .3s;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    margin-left: 45px;
+    color: #016170;
+    letter-spacing: 2px;
+    font-size: .8rem;
+    text-transform: uppercase;
+    transition: color 0.5s;
+}
+
+.nav-links a:hover {
+    color: #f3f3f3;
+}
+ 
+.hero {
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .8)), url(https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNodXJjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f3f3f3;
 }
 
+.hero h1 {
+    font-size: 3rem;
+}
 
-/* media design for title */
-  @media  screen and (max-width:400px) {
-    #navbar {
-         margin-right: 2px;
-        
-    }
-    #navbar a{
-       font-size: 0.6rem; 
-       word-spacing: 30px;
-       display: flex;
-    }
-    .logo-content img{
-       margin-left: -5px;
-       height: 400px;
-       width: 400px;
-    }
-    .title-area{
-        height: 200px;
-    }
-    .title-area h1{
-        font-size: 1.8rem;
-        margin-left: 100px;
-    }
-    .btn{
-        width: 50%;
-        padding: 3px 3px 2px 2px;
-        font-size: 1.7rem;
-        justify-content: center;
-    }
-  }
-/* media design for title at 1000 */
-@media screen and (max-width:1000px)
- {
-   #navbar{
+.hero div {
     display: flex;
-    justify-content: space-between;
-    margin-right: 2px;
-    
-   }   
-   #navbar a{
-    font-size: 1rem;
-   } 
-   .logo-content img{
-    margin-left: -5px;
-    height: 400px;
-    width: 400px;
-   }
-   .title-area{
-    height: 200px;
-   }
-   .title-area h1{
-    font-size: 2rem;
-    margin-left: 100px;
-   }
-   .btn{
-    width: 50%;
-    padding: 3px 3px 2px 2px ;
-    font-size: 1.8rem;
-   }
-}
-/* media screen for title at 1280 */
-/* @media screen and (max-width:1280px) {
-    .logo-content img{
-        margin-left: -1px;
-    }
-    .title-area h1{
-        font-size: 3rem;
-        margin-right: -1px;
-    }
-    .btn{
-        width: 25%;
-        margin-top: 40px;
-    }
-} */
- /* about us design */
-
- .about-us-content {
-    background: rgb(24, 154, 177);
-    height: 600px;
-    color: white;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    flex: 1 1 30rem;
-    padding: 3rem;
-    display: grid;
+    gap: 30px;
+}
+
+.hero p {
+    width: 500px;
+    font-size: 1.5rem;
+}
+
+.join {
+    border: 1px solid black;
+    border-radius: 50px;
+    color: #f3f3f3;
+     background: linear-gradient(to right, #0567CE, #C1ADBB, #0567CE);
+     padding: 10px 40px;
+     text-transform: uppercase;
+     font-size: 1.5rem;
+}
+
+.about {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(36, 205, 235, .2);
+}
+
+.reused {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-
-}
-.about-us-content h4{
-    text-align: center;
-    font-size: 30px;
-    color: #fff;
-    font-size: 3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
-    
-}
-.about-us-content p{
-    font-size: 30px;
-    text-align: center;
-    left: 12px;
-    margin-top: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-}
-/* media design for about us for 400px */
-@media screen and (max-width:400px) {
-    .about-us-content{
-        height: 400px;
-    }
-    .about-us-content h4{
-        font-size: 2.3rem;
-        margin-top: -20px;
-    }
-    .about-us-content p{
-        font-size: 1.9rem;
-    }  
-}
-/* media design for about at 1000px */
-@media screen and (max-width:1000px) {
-    
-    .about-us-content h4{
-        font-size: 1.5rem;
-    }
-    .about-us-content p{
-        font-size: 1.2rem;
-        margin-top: -50px;
-    }
-    
 }
 
-/* services design */
-.services-and-times {
-    background: rgb(189, 30, 30);
-    height: 600px;
-    color: white;
-    display: grid;
-    flex: 1 1 30rem;
-    text-align: center;
-    position: relative;
-    
-}
-.services-and-times h1{
-    font-size: 3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
-    margin-top: 35px;
-
-}
-.services-and-times ol{
-    font-size: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    margin-top: -75px;
-}
-/* media design for services and times content for 400px */
-
-@media screen and (max-width:400px) {
-    .services-and-times h1 {
-        font-size: 2.3rem;
-    }
-    .services-and-times ol{
-        font-size: 1.9rem;
-    }
-    
-}
-/* media design for services and times at 1000px */
-
-@media screen and (max-width:1000px) {
-    .services-and-times h1{
-        font-size: 1.5rem;
-    }
-    .services-and-times ol{
-        font-size: 1.3rem;
-    }
-}
-/* media design for services at 1280 */
-/* @media screen and (max-width:1280px) {
-    .services-and-times{
-        height: 600px;
-    }
-} */
-/* contact design */
-.contact-us-content{
-    background: rgb(24, 154, 177);
-    color: white;
-    display: grid;
-    flex: 1 1 30rem;
-    text-align: center;
-    position: relative;
-    height: 600px;
-}
-.contact-us-content h1{
-    font-size: 3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
-    margin-top: 35px;
-}
-.contact-us-content ol{
-    font-size: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    top: 0;
-    margin-bottom: 100px;
-    margin-top: -15px;
-    
-    
-}
-/* media desig for contact us for 400px */
-@media screen and (max-width:400px) {
-    .contact-us-content h1{
-        font-size: 2.3rem;
-    }
-    .contact-us-content ol{
-        font-size: 1.6rem;
-    }
-    
-}
-/* media design for contact us at 1000px */
-@media screen and (max-width:1000px) {
-    
-    .contact-us-content h1{
-        font-size: 1.5rem;
-    }
-    .contact-us-content ol{
-        font-size: 1.3rem;
-        margin-top: -80px;
-    }
-    
-}
-/* location design */
-.location {
-    height: 600px;
-    background: white;
-}
-.location-content ol{
-    text-align: right;
-    margin-top: -270px;
-}
-.location-content ol h1{
-    margin-right: 170px;
-    font-size: 3rem;
+.reused h1 {
+    font-size: 3.5rem;
+    color: rgba(0, 0, 0, .1);
     text-transform: uppercase;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;  
-    color: rgb(14, 210, 245); 
 }
-.location-content ol address{
-    margin-right: 60px;
-    font-size: 30px;
-    font-weight: 600;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(14, 210, 245);
+
+.reused h3 {
+    position: absolute;
+    top: 22%;
+    text-transform: uppercase;
+    color: rgb(1, 47, 56);
+    background: linear-gradient(to right, #0567CE, #092f57);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 2rem;
+    word-spacing: 10px;
+    letter-spacing: 5px;
 }
-.location-content iframe{
+
+.about p {
+    font-size: 1.3rem;
     width: 900px;
-    margin-top: 130px;
 }
-/* media design for location at 1000px */
-@media screen and (max-width:1000px) {
-    .location-content iframe{
-        width: 300px;
-        height: 300px;
-        margin-left: 15%;
-    }
-    .location-content ol h1{
-        margin-top: 260px;
-        font-size: 2rem;
-    }
-    .location-content ol address{
-        font-size: 1.5rem;
-        margin-left: 50px;
-        text-align: center;
-    }
-}
-/* media design for location at 1280px */
-/* @media screen and (max-width:1280px) {
-    .location-content iframe{
-        width: 500px;  
-    }
 
-} */
-
-
-
-
-
-
-
-/* media design for location at 400px */
-
-@media screen and (max-width:400px) {
-    .location{
-        height: 900px;
-    }
-    .location-content iframe{
-        width: 300px;
-        margin-left: 50px;
-        height: 480px;
-        margin-top: 120px;
-    }
-    .location-content ol{
-        margin-top: -140px;
-    }
-    .location-content ol h1{
-        font-size: 2rem;
-        text-align: center;
-        margin-left: 140px;
-        
-    }
-    .location-content i{
-        display: none;
-    }
-    .location-content ol address{
-        font-size: 1.5rem;
-        margin-left: 50px;
-        text-align: center;
-    }
-}
-/* messages design */
-.messages{
-    height: 500px;
-    background: aliceblue;
-    margin-top: 50px;
+.services {
+    height: 65vh;
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
-.messages-content h1{
+
+.services .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    gap: 40px;
+}
+
+.services .grid div {
     display: flex;
-    margin-top: 120px;
-    margin-left: 120px;
-    font-size: 3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    color: rgb(14, 210, 245);
-}
-.messages-content iframe{
-    margin-left: 1200px;
-    margin-top: -80px;
-    
-}
-
-/* media design for messages at 400px */
-@media screen and (max-width:400px)  {
-    .messages-content{
-        height: 700px;
-    }
-    .messages-content h1{
-        font-size: 2.3rem;
-        text-align: center;
-        margin-left: -1px;
-        margin-top: -2px;
-    }
-    .messages-content i{
-        display: none;
-    }
-    .messages-content iframe{
-        width: 400px;
-        margin-top: 40px;
-        height: 200px;
-        margin-left: -1px;
-    }
-}
-@media screen and (max-width:1000px) {
-    .messages-content h1{
-        margin-left: -1px;
-        margin-top: -3px;
-    }
-    .messages-content iframe{
-        width: 400px;
-        margin-top: 40px;
-        height: 200px;
-        margin-left: -1px;
-        
-        
-
-    }
-    .messages-content h1{
-        font-size: 1.9rem;
-
-          /* margin-right: 90px;
-        text-align: center;
-        margin-top: 140px;   */
-    }
-    .messages-content i{
-        display: none;
-    }
-}
-/* give design */
-.give{
-    height: 400px;
-    background: white;
-    margin-top: 50px;
-}
-.give-content{
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
-    color: rgb(14, 210, 245);
+    border: 1px solid black;
+    height: 35vh;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    color: #f3f3f3;
+    font-size: 1.2rem;
 }
-.give-content h1{
-    font-size: 3rem;
-    font-weight: 700;
+.services .grid:hover{
+    transform: scale(1.02);
+    transition: 2s;
 }
-.give-content ol{
-    font-size: 1.4rem;
-    font-weight: 700px;
+.same {
+    background-position: center;
+    background-size: cover;
 }
-
-/* .give-words{
-    text-align: right;
-} */
-  
- /* .give-content h1{
-    margin-right: 250px;
-    font-size: 3rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    color: rgb(14, 210, 245);
-    
+.sunday {
+    background-image: linear-gradient(to right,
+                rgba(0, 0, 0, .6),
+                rgba(0, 0, 0, .6)), url(https://images.unsplash.com/photo-1514286969571-5142af56b991?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBjb25ncmVnYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60);
 }
 
-.give-content  ol {
-    text-align: right;
-    margin-right: 170px;
-    font-size: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    color: rgb(14, 210, 245);
-    
-    
-    
-}  */
-
-/* mesia design for give at 400px */
-@media screen and (max-width:400px) {
-    .give-content img{
-        height: 200px;
-        width: 40px;
-        justify-content: center;
-        margin-right: 100px;
-
-    }
-    .give-content h1{
-        font-size: 2.4rem;
-        text-align: center;
-        margin-right: 100px;
-    }
-    .give-content ol{
-        font-size: 0.8rem;
-        text-align: center;
-        margin-left: 100px;
-    
-    }
-    
+.services .grid .wednesday {
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, .6),
+        rgba(0, 0, 0, .6)), url(https://media.istockphoto.com/id/172957107/photo/old-book.webp?b=1&s=170667a&w=0&k=20&c=xhMJB2HZoO7vbJMZPJCauVpu1p2kWPVVx0BoKNy6kzY=);
 }
-/* media design for give at 1000px */
-@media screen and (max-width:1000px) {
-    .give{
-        margin-top: 40px;
-        height: 900px;
-    }
-    .give-content h1{
-        font-size: 2.4rem;
-        text-align: center;
-        margin-right: 30px;
-        margin-top: 30px;
-    }
-    .give-content ol{
-        font-size: 0.8rem;
-        text-align: center;
-        margin-left: 150px;
-        margin-left: -4px;
-    }
-    
+ 
+.services .grid .thursday {
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, .6),
+            rgba(0, 0, 0, .6)), url(https://images.unsplash.com/photo-1501691223387-dd0500403074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJhaW4lMjBzb2FrZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60);
 }
 
-/* footer design */
-.footer{
-    color: #fff;
-    background: rgb(46, 172, 194);
-    margin: 0 auto;
+.services .grid .counselling {
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, .6),
+            rgba(0, 0, 0, .6)), url(https://media.istockphoto.com/id/1352621402/photo/middle-aged-man-covering-his-face-with-hand-during-meeting-with-a-psychologist.webp?b=1&s=170667a&w=0&k=20&c=tSQg8nk5OlZk9ffTxDDK8tvYh3yzfLtCKENjmt4LBgE=);
+}
+
+.messages {
+    height: 70vh;
+    background-color: aliceblue;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    max-width: 2500px;
-    
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+    text-align: center;
 }
-.footer p{
-    font-size: 30px;
+
+.messages .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 30px;
 }
-.footer i{
+
+iframe {
+    border-radius: 20px;
+}
+
+.contact {
+    height: 155vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    background-color:antiquewhite;
+}
+
+.contact-det {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.contact-det p {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 20vh;
+}
+
+.contact-icons div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, .8);
+    color: #f3f3f3;
+}
+
+.contact-icons div h4 {
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+.contact-icons div iconify-icon {
     font-size: 2.5rem;
-    
+}
+.contact-icons:hover{
+    transform: scale(1.02);
+    transition: 3s;
+}
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} 
+
+.socials p {
+    font-size: 1.5rem;
+}
+
+ .media-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: center;
  }
-/*media design for footernat 400px */
-@media screen and (max-width:400px) {
-    .footer{
-        
-        
+
+ .give {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(6, 26, 44);
+ }
+
+ .give p {
+    font-size: 1.8rem;
+ }
+
+ footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-top: solid 1px rgb(6, 26, 44);
+    height: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    color: #f3f3f3;
+ }
+
+ footer p {
+    font-size: 1.1rem;
+ }
+
+ footer iconify-icon {
+    font-size: 3rem;
+    color: #f3f3f3;
+ }
+ 
+ 
+ @media (min-width: 300px) and (max-width:650px)  {
+    .space {
+        padding: 10px 30px;
     }
-    .footer p{
-        font-size: 1rem;
-        margin-left: -40px;
+
+    .hero {
+        padding-top: 100px;
+        background-size:inherit;
+        height: auto;
+        padding-bottom: 50px;
     }
-    .footer i{
+
+    nav {
+        flex-direction: row-reverse;
+    }
+
+    .menu  {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 150px;
+        min-height: 50vh;
+        background-color:#0ed2f5;
+        transition: transform 0.5s;
+        transform: translateX(150px);
+    }
+
+    .nav-links a {
+        font-size: .7rem;
+        font-weight: 500;
+    }
+
+    .hero h1{
+        font-size: 1.5rem;
+        width: 300px;
+    }
+
+    .hero p {
         font-size: 1rem;
-        display: flex;
+        width: 280px;
+    }
+
+    .reused h1 {
+        font-size: 2rem;
+    } 
+
+    .reused h3 {
+        font-size: 1rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        width: auto;
+    }
+
+    .services {
+        height: auto;
+    }
+
+    .services .grid {
+        grid-template-columns: repeat(1, 250px);
+    }
+
+    .services .grid div {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .messages {
+        height: auto;
+        padding-bottom: 50px;
+    }
+    .messages .grid {
+        grid-template-columns: repeat(1, 350px);
+        gap: 40px;
+        align-items: center;
+    }
+
+    .contact {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .contact .contact-icons {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-det p {
+        font-size: 1rem;
+    }
+
+    .contact-det iframe {
+        width: 400px;
+    }
+    .give {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .give p {
+        font-size: 1.2rem;
+    }
+
+    footer p{
+        font-size: .7rem;
+    }
+
+    footer iconify-icon {
+        font-size: 2rem;
+    }
+
+        .active-nav {
+            transform: translateX(0);
+        }
+    
+        .close-nav {
+            transform: translateX(150px);
+        }
+ }
+
+ @media (min-width: 651px) and (max-width: 850px) {
+    .space {
+            padding: 10px 30px;
+        }
+    
+        .hero {
+            padding-top: 100px;
+            height: 55vh;
+        }
+    
+        nav {
+            flex-direction: row-reverse;
+        }
+    
+        nav iconify-icon {
+            display: inline-block;
+        }
+    
+        .menu {
+            display: block;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 8vh;
+            right: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 150px;
+            min-height: 55vh;
+            background-color:#fff;
+            transition: transform 0.5s;
+            transform: translateX(150px);
+        }
+
+        .nav-links a {
+            font-size: .7rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+    
+        .hero p {
+            font-size: 1rem;
+            width: 280px;
+        }
+    
+        .reused h1 {
+            font-size: 2rem;
+        }
+    
+        .reused h3 {
+            font-size: 1rem;
+        }
+    
+        .about p {
+            font-size: 1rem;
+            width: auto;
+        }
+    
+        .services {
+            height: auto;
+            padding-bottom: 50px;
+        }
+    
+        .services .grid {
+            grid-template-columns: repeat(2, 250px);
+        }
+
+        .services .grid div {
+            height: auto;
+        }
+
+        .contact {
+            height: auto;
+            padding-bottom: 20px;
+        }
+    
+        .contact .contact-icons {
+            gap: 50px;
+        }
+    
+        .contact-det p {
+            font-size: 1rem;
+        }
+    
+        .contact-det iframe {
+            width: 400px;
+        }
+    
+        .give {
+            height: auto;
+            padding-bottom: 20px;
+        }
+    
+        .give p {
+            font-size: 1.2rem;
+        }
+    
+        footer p {
+            font-size: .7rem;
+        }
+    
+        footer iconify-icon {
+            font-size: 2rem;
+        }
+
+        .messages {
+            height: auto;
+            padding-bottom: 50px;
+        }
+
+    .messages .grid {
+        grid-template-columns: repeat(3, 220px);
+        align-items: center;
+    }
+
+    .messages .grid iframe {
+        width: 220px;
+    }
+
+    .contact-icons {
+        gap: 20px;
+    }
+    .contact-icons div {
+        width: 180px;
+        height: 180px;
+        border-radius: 200px;
+    }
+
+    .contact-icons div h4 {
+        font-size: .9rem;
+        font-weight: 200;
     }
     
-}
-/* media design for footer at 1000px */
-@media screen and (max-width:1000px) {
-    .footer{
-        height: 50px;
-        margin-top: -550px;
+    .contact-icons div iconify-icon {
+        font-size: 2.5rem;
     }
-    .footer p{
+
+    .active-nav {
+    transform: translateX(0);
+    }
+
+    .close-nav {
+    transform: translateX(150px);
+    }
+ }
+
+ @media (min-width: 851px) {
+.space {
+        padding: 10px 30px;
+    }
+
+    .hero {
+        padding-top: 100px;
+        height: 100vh;
+    }
+
+    nav iconify-icon {
+        display: inline-block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        width: 100%;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        width: 60%;
+    }
+
+    .reused h1 {
+        font-size: 2rem;
+    }
+
+    .reused h3 {
         font-size: 1rem;
-        margin-left: 10px;
     }
-    .footer i{
+    .about {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .about p {
+        font-size: 1.5rem;
+        width: auto;
+    }
+
+    .services {
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .services .grid {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    .services .grid div {
+        height: auto;
+    }
+
+    .messages {
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .messages .grid {
+        grid-template-columns: repeat(3, 250px);
+        align-items: center;
+    }
+
+    .messages .grid iframe {
+        width: 250px;
+    }
+
+    .contact {
+        height: auto;
+        padding-bottom: 70px;
+    }
+
+    .contact .contact-icons {
+        gap: 50px;
+    }
+
+    .contact-det p {
         font-size: 1rem;
-        display: flex;
-        margin-right: 10px;
-        
     }
-}
-/* media design for footer at 1280px */
-/* @media screen and (max-width:1280px) {
-    .footer{
-        height: 50px;
-        margin-top: -500px;
+
+    .contact-det iframe {
+        width: 400px;
     }
-} */
+
+    .give {
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .give p {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: .7rem;
+    }
+
+    footer iconify-icon {
+        font-size: 2rem;
+    }
+ }
+
+
+ 
